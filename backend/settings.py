@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shoes.apps.ShoesConfig',
+    'news.apps.NewsConfig',
     'rest_framework',
     'corsheaders',
 ]

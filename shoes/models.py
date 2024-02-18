@@ -9,6 +9,7 @@ class Shoes(models.Model):
     is_published = models.BooleanField(default=True)
 
     image = models.ImageField(null=True, blank=True)
+
     fonImage1 = models.ImageField(null=True, blank=True)
     fonImage2 = models.ImageField(null=True, blank=True)
     fonImage3 = models.ImageField(null=True, blank=True)
@@ -18,6 +19,9 @@ class Shoes(models.Model):
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
     gender = models.ForeignKey('Gender', on_delete=models.PROTECT, null=True)
     color = models.ForeignKey('Color', on_delete=models.PROTECT, null=True)
+    color1 = models.ForeignKey('Color1', on_delete=models.PROTECT, null=True)
+    color2 = models.ForeignKey('Color2', on_delete=models.PROTECT, null=True)
+    color3 = models.ForeignKey('Color3', on_delete=models.PROTECT, null=True)
     size = models.ForeignKey('Size', on_delete=models.PROTECT, null=True)
     quantity = models.CharField(max_length=255)
     
@@ -46,6 +50,27 @@ class Color(models.Model):
     def __str__(self):
         return self.name
     
+
+class Color1(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name
+    
+
+class Color2(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name
+    
+
+class Color3(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name
+
 
 class Size(models.Model):
     name = models.CharField(max_length=100, db_index=True)
